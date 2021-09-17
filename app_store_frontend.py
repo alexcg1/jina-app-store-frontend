@@ -47,7 +47,7 @@ def get_star_string(rating, max_rating=5, full_star="★", empty_star="☆"):
 
 
 def get_price_string(price, currency="$"):
-    if price == "0":
+    if int(price) == 0:
         price_string = "Free"
     else:
         price_string = currency + price
@@ -80,24 +80,24 @@ st.markdown(
 )
 
 # Setup sidebar
-st.sidebar.title("Jina App Store Search")
+st.sidebar.title("Jina Games Store Search")
 
-settings = st.sidebar.beta_expander(label="Settings", expanded=False)
-with settings:
-    endpoint = st.text_input(label="Endpoint", value=endpoint)
-    top_k = st.number_input(label="Top K", value=top_k, step=1)
+# settings = st.sidebar.beta_expander(label="Settings", expanded=False)
+# with settings:
+    # endpoint = st.text_input(label="Endpoint", value=endpoint)
+    # top_k = st.number_input(label="Top K", value=top_k, step=1)
 
 st.sidebar.markdown(
     """
-This is an example app store search engine using the [Jina neural search framework](https://github.com/jina-ai/jina/).
+This is an example game/app store search engine using the [Jina neural search framework](https://github.com/jina-ai/jina/).
 
-**Note: click the search button instead of hitting Enter. We're working on fixing this!**
+**Note: click the search button instead of hitting Enter. This is a Streamlit issue, not Jina!**
 
 - Backend: [Jina](https://github.com/jina-ai/jina/)
 - Frontend: [Streamlit](https://www.streamlit.io/)
 - Dataset: [Kaggle](https://www.kaggle.com/tristan581/17k-apple-app-store-strategy-games)
 
-Only the search engine part of this app store works. We don't host apps, and we certainly don't sell them!
+Only the search engine part of this game store works. We don't host apps, and we certainly don't sell them!
 
 [Visit the repo](https://github.com/alexcg1/jina-app-store-example)
 
@@ -106,7 +106,7 @@ Only the search engine part of this app store works. We don't host apps, and we 
     unsafe_allow_html=True,
 )
 
-st.title("Jina App Store Search")
+st.title("Jina Games Store Search")
 
 query = st.text_input(
     label="Search mobile games by keywords or category e.g. fun games, knights and warriors, etc."
