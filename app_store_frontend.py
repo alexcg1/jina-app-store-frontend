@@ -47,7 +47,7 @@ def get_star_string(rating, max_rating=5, full_star="★", empty_star="☆"):
 
 
 def get_price_string(price, currency="$"):
-    if int(price) == 0:
+    if float(price) == 0.0:
         price_string = "Free"
     else:
         price_string = currency + price
